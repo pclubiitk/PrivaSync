@@ -6,3 +6,4 @@ Run npm install to install the dependencies, then run npm run dev to start the d
 npm install
 npm run dev
 ```
+----
