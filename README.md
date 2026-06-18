@@ -1,1 +1,1 @@
-# privasync-demo
+# privasync
