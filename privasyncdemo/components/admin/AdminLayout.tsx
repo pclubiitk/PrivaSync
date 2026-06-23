@@ -4,7 +4,6 @@
 import { useState } from "react";
 
 import AdminNavbar from "./AdminNavbar";
-import { cn } from "@/lib/utils";
 
 interface AdminLayoutProps {
   children: React.ReactNode;

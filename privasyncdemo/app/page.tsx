@@ -107,7 +107,7 @@ const TBtn = React.memo(({
 TBtn.displayName = 'TBtn';
 
 export default function LandingEditorPage() {
-  const [docTitle, setDocTitle]   = useState('Untitled Document');
+  const [docTitle]   = useState('Untitled Document');
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [isPredicting, setIsPredicting] = useState(false);
   const [fmt, setFmt] = useState({
