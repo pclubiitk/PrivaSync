@@ -10,6 +10,7 @@ import {
   AlignLeft, AlignCenter, AlignRight, AlignJustify,
   List, ListOrdered, Undo, Redo, FileText, History
 } from 'lucide-react';
+import { useGContext } from "@/components/ContextProvider";
 
 const PREDICTIONS: Record<string, string[]> = {
   "building":      ["a", "the", "federated", "scalable", "our"],
@@ -114,6 +115,13 @@ export default function LandingEditorPage() {
     justifyLeft: false, justifyCenter: false, justifyRight: false, justifyFull: false,
     insertUnorderedList: false, insertOrderedList: false,
   });
+  
+  // Remove if not needed - added for testing
+  const {isLoggedIn, setLoggedIn, isAdmin, setAdmin} = useGContext();
+  console.log("Login status", isLoggedIn);
+  console.log(setLoggedIn);
+  console.log("Adminstatus", isAdmin);
+  console.log(setAdmin);
 
   const editorRef    = useRef<HTMLDivElement>(null);
   const ghostRef     = useRef<HTMLDivElement>(null);
