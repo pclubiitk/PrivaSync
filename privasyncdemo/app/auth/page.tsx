@@ -1,8 +1,5 @@
-export default function DashboardPage() {
-  return (
-    <div>
-      <h1>Dashboard</h1>
-      <p>Welcome to the admin dashboard!</p>
-    </div>
-  );
+import { redirect } from "next/navigation"
+
+export default function AuthPage() {
+  redirect("/auth/login")
 }
