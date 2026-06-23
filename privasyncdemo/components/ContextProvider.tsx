@@ -43,13 +43,13 @@ export function GlobalContextProvider({ children }: { children: ReactNode }) {
         );
         if (response.ok) {
           setLoggedIn(true);
-          // uncomment for authorization
-          // const data = await response.json();
-          // if(data.role == ADMIN_CODE){
-          //   setAdmin(true)
-          // }else{
-          //   setAdmin(false)
-          // }
+          // authorization
+          const data = await response.json();
+          if(data.role == ADMIN_CODE){
+            setAdmin(true)
+          }else{
+            setAdmin(false)
+          }
         }else {
           setLoggedIn(false);
         }
@@ -63,8 +63,8 @@ export function GlobalContextProvider({ children }: { children: ReactNode }) {
     // verifyUserStatus();
 
     // Hardcoding until backend is written
-    setLoggedIn(true)
-    setAdmin(false)
+    // setLoggedIn(true)
+    // setAdmin(false)
   }, []);
 
   const value = {
