@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -15,7 +15,7 @@ export default function Navbar() {
 
   const adminLinks = [
     { name: "Dashboard", href: "/admin/dashboard" },
-    { name: "Training", href: "/admin/training" },
+    { name: "Training", href: "/admin/training/status" },
   ];
 
   const userLinks = [
@@ -25,7 +25,10 @@ export default function Navbar() {
   ];
 
   const links = isAdmin ? adminLinks : isUser ? userLinks : [];
-
+const logout = () => {
+  redirect("/auth/login");
+  console.log("User logged out");
+}
   return (
     <header className="border-b bg-white">
       <div className="mx-auto flex h-16 items-center justify-between px-4 md:px-6">
@@ -71,7 +74,7 @@ export default function Navbar() {
         </div>
 
       
-        <button className="rounded-md border px-3 py-1.5 text-sm hover:bg-gray-100">
+        <button className="rounded-md border px-3 py-1.5 text-sm hover:bg-gray-100" onClick={logout}>
           Logout
         </button>
       </div>
